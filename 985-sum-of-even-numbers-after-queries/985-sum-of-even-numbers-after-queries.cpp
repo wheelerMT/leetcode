@@ -1,9 +1,6 @@
 class Solution {
 public:
     vector<int> sumEvenAfterQueries(vector<int>& nums, vector<vector<int>>& queries) {
-        // Loop through queries, get the index and value, then add the value to that index in nums
-        // Sum the even values of the nums array and store it in the answer array
-        
         int sum {0};
         for (auto& num : nums)
         {
