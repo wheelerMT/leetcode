@@ -1,16 +1,26 @@
 class Solution {
 public:
     int mySqrt(int x) {
-        if (x == 0) return 0;
+
+        long left = 0;
+        long right = x;
         
-        long long count {};
-        long long product {};
-        while (product <= x)
+        while (left <= right)
         {
-            ++count;
-            product = count * count;
+            long mid = left + (right - left) / 2;
+            
+            if (mid * mid == x) return mid;
+            
+            if (mid * mid < x)
+            {
+                left = mid + 1;
+            } else
+            {
+                right = mid - 1;
+            }
         }
         
-        return (int)(count - 1);
+        return right;
+        
     }
 };
